@@ -17,7 +17,7 @@ st.set_page_config(
 # It reads the key from the secrets you set up on Streamlit Community Cloud.
 try:
     genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
-    model = genai.GenerativeModel('gemini-1.5-flash-latest')
+    model = genai.GenerativeModel('gemini-1.5-flash')
 except Exception as e:
     st.error(f"Error configuring the Gemini API: {e}", icon="🚨")
     st.info("Please make sure you have set up your GEMINI_API_KEY in the Streamlit secrets.", icon="🔑")
@@ -176,3 +176,4 @@ if st.session_state.dataframe is not None:
 
 else:
     st.info("Please upload a CSV file to begin the analysis.")
+
